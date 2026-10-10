@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#15233a">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="953 C. Aragon">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15233a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Join · 953 C. Aragon House</title>
+<style>@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}@keyframes shake{0%,100%{transform:none}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}@keyframes ring{0%{box-shadow:0 0 0 0 rgba(193,154,75,.85)}100%{box-shadow:0 0 0 12px rgba(193,154,75,0)}}@keyframes tap{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-3px,-3px) scale(.92)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes confetti{0%{transform:translateY(-12vh) rotate(0)}100%{transform:translateY(110vh) rotate(800deg)}}@keyframes bounceIn{0%{opacity:0;transform:scale(.3)}60%{opacity:1;transform:scale(1.08)}100%{transform:scale(1)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes bar{from{width:0}to{width:100%}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',system-ui,sans-serif;color:#15233a;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;background:#eef0f4}a{color:#15233a}a:hover{color:#c19a4b}*{box-sizing:border-box}input,select,button,textarea{font:inherit}button{transition:transform .18s cubic-bezier(.32,.72,0,1),opacity .18s}button:active{transform:scale(.97);opacity:.85}</style>
+</helmet>
+<div style="min-height:100dvh;background:radial-gradient(110% 55% at 0% 0%,#dfe6f3 0%,transparent 60%),radial-gradient(90% 50% at 100% 30%,#f3e9d4 0%,transparent 60%),radial-gradient(90% 60% at 20% 100%,#e2ecef 0%,transparent 60%),#eef0f4;display:flex;justify-content:center;padding:calc(env(safe-area-inset-top) + 18px) 16px 40px">
+  <div style="width:100%;max-width:440px;display:flex;flex-direction:column;gap:16px">
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <sc-if value="{{ canBack }}"><button onClick="{{ back }}" style="border:0;background:rgba(255,255,255,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);width:36px;height:36px;border-radius:18px;font-size:20px;cursor:pointer;color:#15233a">‹</button></sc-if>
+      <div style="flex:1;display:flex;gap:6px">
+        <sc-for list="{{ progress }}" as="p" hint-placeholder-count="5"><span style="flex:1;height:4px;border-radius:2px;background:{{ p.bg }};transition:background .3s"></span></sc-for>
+      </div>
+      <span style="font-size:12px;font-weight:600;color:#6c6c72;white-space:nowrap">{{ stepLabel }}</span>
+    </div>
+
+    <sc-if value="{{ st.welcome }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:16px;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="display:flex;justify-content:center;padding:6px 0 2px"><img src="assets/emblem-512.jpg" alt="953 C. Aragon Housemates emblem" style="width:min(64vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.85),0 24px 50px -20px rgba(21,35,58,.55);animation:float 5s ease-in-out infinite"></div>
+        <div>
+          <div style="font-size:13px;font-weight:700;letter-spacing:.06em;color:#c19a4b">953 C. ARAGON HOUSE · MALATE</div>
+          <div style="font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:6px">Your house, in your pocket.</div>
+          <div style="font-size:16px;color:#4c4c52;line-height:1.45;margin-top:10px">Dues, utilities, house news and the HouseMaster on duty, all in one app. Setup takes about 3 minutes.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:.5px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 16px">
+          <sc-for list="{{ overview }}" as="o" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:{{ o.bd }}">
+              <span style="width:34px;height:34px;flex:none;border-radius:17px;background:#15233a;color:#e2c47e;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">{{ o.n }}</span>
+              <span style="flex:1;line-height:1.3"><span style="display:block;font-size:15.5px;font-weight:600">{{ o.t }}</span><span style="display:block;font-size:13px;color:#6c6c72">{{ o.s }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+        <button onClick="{{ start }}" style="border:0;background:#15233a;color:#fff;border-radius:16px;padding:17px;font-size:17px;font-weight:600;cursor:pointer;box-shadow:0 10px 24px -10px rgba(21,35,58,.6)">Get started</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ st.name }}">
+      <div style="display:flex;flex-direction:column;gap:14px;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:.5px solid rgba(255,255,255,.7);border-radius:22px;padding:16px;display:flex;align-items:center;gap:14px">
+          <div style="display:flex;flex:none"><sc-for list="{{ crowd }}" as="c"><span style="width:34px;height:34px;border-radius:17px;margin-left:-10px;border:2px solid #fff;background:{{ c.bg }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">{{ c.ini }}</span></sc-for></div>
+          <div style="line-height:1.3"><div style="font-size:15px;font-weight:700">{{ crowdCount }} housemates</div><div style="font-size:12.5px;color:#6c6c72">953 C. Aragon House · Malate</div></div>
+        </div>
+        <div><div style="font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1">Who are you?</div><div style="font-size:15px;color:#6c6c72;margin-top:6px">Search your name as it appears on the house list.</div></div>
+        <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Search your name or Facebook name" style="border:0;background:rgba(118,118,128,.14);border-radius:14px;padding:14px 16px;font-size:17px;color:#15233a">
+        <div style="background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:.5px solid rgba(255,255,255,.7);border-radius:20px;padding:0 16px;max-height:56vh;overflow-y:auto">
+          <sc-for list="{{ names }}" as="n" hint-placeholder-count="8">
+            <button onClick="{{ n.onTap }}" style="width:100%;display:flex;align-items:center;gap:12px;border:0;border-bottom:.5px solid rgba(0,0,0,.08);background:none;padding:11px 0;cursor:pointer;text-align:left;color:#15233a">
+              <span style="width:38px;height:38px;flex:none;border-radius:19px;background:{{ n.bg }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600">{{ n.ini }}</span>
+              <span style="flex:1;line-height:1.3"><span style="display:block;font-size:16px;font-weight:500">{{ n.name }}</span><span style="display:block;font-size:12.5px;color:#6c6c72">{{ n.sub }}</span></span>
+              <span style="color:#c4c4c8;font-size:18px">›</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="font-size:13px;color:#6c6c72;text-align:center">Not on the list? Message an admin in the Housemates chat.</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ st.details }}">
+      <div style="display:flex;flex-direction:column;gap:14px;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="font-size:12.5px;color:#6c6c72;line-height:1.4;text-align:center">Your information is confidential; privacy is our priority.</div>
+        <sc-if value="{{ notReturning }}">
+        <div style="border-radius:22px;padding:18px;background:linear-gradient(145deg,#1b2b47,#0f1828);color:#fff;box-shadow:0 20px 40px -18px rgba(21,35,58,.7);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+          <span style="position:absolute;right:-50px;top:-50px;width:170px;height:170px;border-radius:85px;background:radial-gradient(circle,rgba(226,196,126,.35),transparent 70%)"></span>
+          <div style="display:flex;align-items:center;gap:10px"><img src="assets/emblem-256.jpg" alt="953 C. Aragon Housemates emblem" style="width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 2px rgba(226,196,126,.6),0 10px 24px -10px rgba(21,35,58,.6)"><div style="line-height:1.2"><div style="font-size:10.5px;font-weight:700;letter-spacing:.1em;color:#e2c47e">953 C. ARAGON HOUSE</div><div style="font-size:12px;opacity:.7">Member card · preview</div></div></div>
+          <div style="font-size:22px;font-weight:800;letter-spacing:-.02em">{{ who }}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.14)">{{ card.dept }}</span><span style="font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.14)">{{ card.status }}</span><sc-if value="{{ card.fb }}"><span style="font-size:11.5px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.08)">fb · {{ card.fb }}</span></sc-if></div>
+        </div>
+        <div><div style="font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1">Hi {{ first }}.</div><div style="font-size:15px;color:#6c6c72;margin-top:6px">Check your details. Fields marked * are required so the HouseMaster can reach you or your family.</div></div>
+        <div style="background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:.5px solid rgba(255,255,255,.7);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-size:13px;font-weight:600">Where are you now?</div>
+            <div style="display:flex;background:rgba(118,118,128,.14);border-radius:11px;padding:2px">
+              <sc-for list="{{ statuses }}" as="o"><button onClick="{{ o.onTap }}" style="flex:1;border:0;border-radius:9px;padding:9px 2px;font-size:13.5px;font-weight:600;cursor:pointer;background:{{ o.bg }};color:#15233a;box-shadow:{{ o.sh }}">{{ o.label }}</button></sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-size:13px;font-weight:600">Your department</div>
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+              <sc-for list="{{ depts }}" as="d"><button onClick="{{ d.onTap }}" style="border:2px solid {{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};border-radius:14px;padding:12px 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:22px;line-height:1">{{ d.g }}</span><span style="font-size:14px;font-weight:700">{{ d.label }}</span><span style="font-size:10.5px;opacity:.7;line-height:1.25;text-align:center">{{ d.sub }}</span></button></sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ isOnboard }}">
+            <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:8px">
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Vessel<input value="{{ f.vessel }}" onChange="{{ on.vessel }}" placeholder="MV …" style="border:0;background:rgba(118,118,128,.12);border-radius:12px;padding:12px;font-size:16px;color:#15233a;min-width:0"></label>
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Back home<input value="{{ f.back }}" onChange="{{ on.back }}" placeholder="Mar 2027" style="border:0;background:rgba(118,118,128,.12);border-radius:12px;padding:12px;font-size:16px;color:#15233a;min-width:0"></label>
+            </div>
+          </sc-if>
+          <sc-for list="{{ fields }}" as="x" hint-placeholder-count="5">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">{{ x.label }}<input value="{{ x.value }}" onChange="{{ x.onChange }}" inputmode="{{ x.mode }}" placeholder="{{ x.ph }}" style="border:0;background:rgba(118,118,128,.12);border-radius:12px;padding:12px;font-size:16px;color:#15233a"></label>
+          </sc-for>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Date of birth *<input type="date" min="1940-01-01" max="{{ birthMax }}" value="{{ f.birth }}" onChange="{{ on.birth }}" aria-label="Date of birth" style="border:0;background:rgba(118,118,128,.12);border-radius:12px;padding:12px;font-size:16px;color:#15233a;min-width:0"><span style="font-size:11.5px;font-weight:400;color:#6c6c72;line-height:1.4">Only you and the admins see it. The house greets you on your day; your age is never shown.</span></label>
+        </div>
+        </sc-if>
+        <sc-if value="{{ returning }}"><div><div style="font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1">One last thing, {{ first }}.</div><div style="font-size:15px;color:#6c6c72;margin-top:6px">Your details are already saved. The house has no signed copy of the House Agreement for you yet.</div></div></sc-if>
+        <div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.75);border:1px solid {{ agreeBd }};border-radius:16px;padding:14px">
+          <button role="checkbox" aria-checked="{{ agreeAria }}" onClick="{{ toggleAgree }}" style="display:flex;align-items:flex-start;gap:12px;border:0;background:transparent;padding:0;text-align:left;cursor:pointer;color:#15233a">
+            <span style="width:24px;height:24px;flex:none;border-radius:7px;border:2px solid #15233a;background:{{ agreeBox }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;line-height:1">{{ agreeTick }}</span>
+            <span style="font-size:15px;line-height:1.4">I have read and agree to the House Agreement and Rules of 953 C. Aragon.</span>
+          </button>
+          <a href="assets/953-Aragon-Agreement-and-House-Rules.pdf" target="_blank" rel="noopener" style="margin-left:36px;font-size:14px;font-weight:600;color:#8a6a26">Read the House Agreement and Rules ›</a>
+          <span style="margin-left:36px;font-size:12px;color:#6c6c72">Updated 01 October 2026 · 7 pages</span>
+        </div>
+        <sc-if value="{{ error }}"><div style="font-size:14px;color:#d0342c">{{ error }}</div></sc-if>
+        <button onClick="{{ toPin }}" style="border:0;background:#15233a;color:#fff;border-radius:16px;padding:17px;font-size:17px;font-weight:600;cursor:pointer">Continue</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ st.pin }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="width:64px;height:64px;border-radius:18px;background:#15233a;color:#e2c47e;display:flex;align-items:center;justify-content:center;font-size:26px;margin-top:8px;box-shadow:0 10px 24px -8px rgba(21,35,58,.5);animation:float 3.5s ease-in-out infinite">●●</div>
+        <div style="font-size:26px;font-weight:800;letter-spacing:-.03em;margin-top:6px">{{ pin.title }}</div>
+        <div style="font-size:15px;color:#6c6c72;text-align:center;max-width:290px;line-height:1.4">{{ pin.sub }}</div>
+        <div style="display:flex;gap:16px;margin:18px 0 6px;animation:{{ pin.shake }}"><sc-for list="{{ pin.dots }}" as="d" hint-placeholder-count="6"><span style="width:14px;height:14px;border-radius:7px;border:1.5px solid #15233a;background:{{ d.bg }};transition:background .15s"></span></sc-for></div>
+        <div style="min-height:20px;font-size:14px;color:#d0342c;text-align:center">{{ pin.err }}</div>
+        <div style="display:grid;grid-template-columns:repeat(3,78px);gap:14px 24px;margin-top:8px">
+          <sc-for list="{{ pin.keys }}" as="k" hint-placeholder-count="12"><button onClick="{{ k.onTap }}" style="visibility:{{ k.vis }};width:78px;height:78px;border-radius:39px;border:0;background:{{ k.bg }};backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);font-size:30px;color:#15233a;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.06)">{{ k.label }}</button></sc-for>
+        </div>
+        <div style="font-size:13px;color:#6c6c72;margin-top:12px;text-align:center;max-width:300px;line-height:1.45">{{ pin.foot }}</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ st.poster }}">
+      <div style="display:flex;flex-direction:column;gap:14px;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="background:linear-gradient(145deg,#1b2b47,#0f1828);color:#fff;border-radius:28px;padding:22px 20px;box-shadow:0 24px 50px -20px rgba(21,35,58,.6);display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden">
+          <span style="position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:100px;background:radial-gradient(circle,rgba(226,196,126,.35),transparent 70%)"></span>
+          <div style="display:flex;align-items:center;gap:12px"><img src="assets/emblem-256.jpg" alt="953 C. Aragon Housemates emblem" style="width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 2px rgba(226,196,126,.6),0 10px 24px -10px rgba(21,35,58,.6)"><div style="line-height:1.2"><div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#e2c47e">INSTALL GUIDE · {{ osName }}</div><div style="font-size:22px;font-weight:800;letter-spacing:-.03em">Put 953 C. Aragon on your Home Screen</div></div></div>
+          <div style="display:flex;background:rgba(255,255,255,.1);border-radius:11px;padding:2px">
+            <sc-for list="{{ platforms }}" as="o"><button onClick="{{ o.onTap }}" style="flex:1;border:0;border-radius:9px;padding:10px;font-size:14px;font-weight:600;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button></sc-for>
+          </div>
+          <div style="font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.8)">Follow the pictures. The <span style="color:#e2c47e;font-weight:700">gold circle</span> shows exactly where to tap.</div>
+        </div>
+        <sc-if value="{{ instInstalling }}">
+          <div style="display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.85);border:1px solid rgba(193,154,75,.45);border-radius:18px;padding:16px;align-items:center;text-align:center">
+            <span style="width:34px;height:34px;border-radius:17px;border:3px solid rgba(21,35,58,.15);border-top-color:#c19a4b;animation:spin .9s linear infinite"></span>
+            <div style="font-size:16px;font-weight:700">Installing 953 C. Aragon…</div>
+            <div style="width:100%;height:6px;border-radius:3px;background:rgba(21,35,58,.1);overflow:hidden"><div style="height:100%;background:#c19a4b;animation:bar 5s linear both"></div></div>
+            <div style="font-size:13px;color:#6c6c72">Your phone is adding the app. This takes a few seconds.</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ instReady }}">
+          <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;background:linear-gradient(150deg,#1b2b47,#0f1828);color:#fff;border-radius:24px;padding:22px 18px;box-shadow:0 24px 50px -20px rgba(21,35,58,.6)">
+            <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50"><sc-for list="{{ confetti }}" as="c"><span style="position:absolute;top:0;left:{{ c.x }};width:{{ c.w }};height:{{ c.h }};background:{{ c.c }};border-radius:2px;animation:confetti {{ c.t }} {{ c.d }} cubic-bezier(.3,.6,.6,1) both"></span></sc-for></div>
+            <img src="assets/emblem-256.jpg" alt="" style="width:96px;height:96px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 4px rgba(226,196,126,.7);animation:bounceIn .8s cubic-bezier(.32,.72,0,1) both">
+            <div style="font-size:24px;font-weight:800;letter-spacing:-.03em;animation:bounceIn .8s .15s both">{{ readyTitle }}</div>
+            <div style="font-size:14px;line-height:1.45;opacity:.85">{{ readySub }}</div>
+            <a href="{{ appHref }}" onClick="{{ openApp }}" style="align-self:stretch;display:block;background:#c19a4b;color:#15233a;border-radius:16px;padding:16px;font-size:17px;font-weight:800;text-decoration:none;animation:ring 1.6s infinite">Open the app</a>
+            <div style="font-size:12.5px;opacity:.7;line-height:1.45">If it opens here in the browser instead, close this tab and tap the 953 C. Aragon icon on your Home Screen.</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ instIdle }}">
+        <div style="display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.82);border:1px solid rgba(193,154,75,.45);border-radius:18px;padding:14px">
+          <sc-if value="{{ canPrompt }}"><button onClick="{{ install }}" style="border:0;background:#c19a4b;color:#15233a;border-radius:14px;padding:16px;font-size:17px;font-weight:700;cursor:pointer">Install the app · one tap</button></sc-if>
+          <sc-if value="{{ inApp }}"><div style="font-size:14px;line-height:1.45;color:#15233a"><b>You’re inside Messenger.</b> Messenger can’t install apps. Open this page in {{ browser }} first.</div></sc-if>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <sc-if value="{{ canOpenBrowser }}"><a href="{{ openBrowserHref }}" style="text-align:center;background:#15233a;color:#fff;border-radius:12px;padding:12px;font-size:14.5px;font-weight:600;text-decoration:none">Open in {{ browser }}</a></sc-if>
+            <button onClick="{{ copyLink }}" style="border:0;background:rgba(21,35,58,.08);color:#15233a;border-radius:12px;padding:12px;font-size:14.5px;font-weight:600;cursor:pointer;grid-column:{{ copySpan }}">{{ copyLabelShort }}</button>
+          </div>
+        </div>
+        <sc-for list="{{ guide }}" as="g" hint-placeholder-count="5">
+          <div style="background:rgba(255,255,255,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:.5px solid rgba(255,255,255,.7);border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 18px rgba(21,35,58,.05)">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:32px;height:32px;flex:none;border-radius:16px;background:#c19a4b;color:#15233a;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800">{{ g.n }}</span>
+              <div style="flex:1;line-height:1.35"><div style="font-size:17px;font-weight:700;letter-spacing:-.01em">{{ g.t }}</div><div style="font-size:13.5px;color:#4c4c52">{{ g.s }}</div></div>
+            </div>
+            <div style="border-radius:16px;background:#e9eaef;padding:12px;display:flex;flex-direction:column;gap:8px;justify-content:{{ g.align }};min-height:96px">
+              <sc-if value="{{ g.bar }}">
+                <div style="background:rgba(255,255,255,.92);border-radius:12px;padding:8px 10px;display:flex;align-items:center;gap:6px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+                  <sc-for list="{{ g.bar }}" as="i"><span style="flex:{{ i.flex }};height:30px;min-width:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:{{ i.fs }};color:#15233a;background:{{ i.bg }};animation:{{ i.anim }}">{{ i.t }}</span></sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ g.list }}">
+                <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+                  <sc-for list="{{ g.list }}" as="r"><div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:.5px solid rgba(0,0,0,.08);background:{{ r.bg }};font-size:14px;font-weight:{{ r.w }};color:#15233a"><span style="flex:1">{{ r.t }}</span><span style="width:26px;height:26px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:14px;animation:{{ r.anim }}">{{ r.i }}</span></div></sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ g.dialog }}">
+                <div style="background:#fff;border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+                  <img src="assets/emblem-256.jpg" alt="953 C. Aragon Housemates emblem" style="width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 2px rgba(226,196,126,.6),0 10px 24px -10px rgba(21,35,58,.6)">
+                  <div style="flex:1;line-height:1.3"><div style="font-size:14px;font-weight:700">953 C. Aragon</div><div style="font-size:11.5px;color:#6c6c72">github.io</div></div>
+                  <span style="border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;background:#c19a4b;color:#15233a;animation:ring 1.4s infinite">{{ g.dialog }}</span>
+                </div>
+              </sc-if>
+              <sc-if value="{{ g.home }}">
+                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;justify-items:center;padding:4px 0">
+                  <sc-for list="{{ homeIcons }}" as="x"><span style="width:40px;height:40px;border-radius:10px;background:{{ x }}"></span></sc-for>
+                  <span style="border-radius:11px;animation:ring 1.4s infinite"><img src="assets/emblem-256.jpg" alt="953 C. Aragon Housemates emblem" style="width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 2px rgba(226,196,126,.6),0 10px 24px -10px rgba(21,35,58,.6)"></span>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+        </sc-if>
+        <sc-if value="{{ installed }}"><div style="background:#15233a;color:#fff;border-radius:16px;padding:16px;font-size:15px;line-height:1.45">Installed. Now open <b style="color:#e2c47e">953 C. Aragon</b> from your Home Screen. Setup continues there.</div></sc-if>
+        <sc-if value="{{ instIdle }}"><button onClick="{{ markInstalled }}" style="border:0;background:#15233a;color:#fff;border-radius:16px;padding:17px;font-size:17px;font-weight:600;cursor:pointer">I’ve installed it</button></sc-if>
+        <button onClick="{{ toName }}" style="border:0;background:none;color:#4c4c52;padding:6px;font-size:14.5px;cursor:pointer">Continue in the browser instead</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ st.open }}">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:stretch;text-align:center;animation:pop .45s cubic-bezier(.32,.72,0,1)">
+        <div style="align-self:center;margin-top:24px;animation:float 3.5s ease-in-out infinite"><img src="assets/emblem-256.jpg" alt="953 C. Aragon Housemates emblem" style="width:96px;height:96px;flex:none;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 2px rgba(226,196,126,.6),0 10px 24px -10px rgba(21,35,58,.6)"></div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-.03em">You’re all set, {{ first }}.</div>
+        <div style="font-size:15.5px;color:#4c4c52;line-height:1.5;max-width:330px;align-self:center">{{ doneText }}</div>
+        <sc-if value="{{ signedCopy }}">
+          <div style="text-align:left;background:rgba(255,255,255,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(193,154,75,.45);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8a6a26">YOUR COPY · MEMBER DETAILS FORM</div>
+            <sc-for list="{{ signedCopy.rows }}" as="r"><div style="display:flex;gap:10px;font-size:13.5px;line-height:1.35"><span style="width:96px;flex:none;color:#6c6c72">{{ r.k }}</span><span style="flex:1;min-width:0;overflow-wrap:anywhere;color:#15233a">{{ r.v }}</span></div></sc-for>
+            <div style="font-size:13.5px;color:#15233a;line-height:1.4;border-top:.5px solid rgba(0,0,0,.08);padding-top:10px">✓ I have read and agree to the House Agreement and Rules of 953 C. Aragon.</div>
+            <div style="font-family:'Great Vibes','Snell Roundhand','Apple Chancery','Segoe Script','Brush Script MT','Dancing Script',cursive;font-size:34px;line-height:1.1;color:#15233a;padding:6px 4px 2px;border-bottom:1.5px solid #c19a4b">{{ signedCopy.name }}</div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+              <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#c19a4b;border:1.5px solid #c19a4b;border-radius:6px;padding:4px 7px;white-space:nowrap;flex:none">DIGITALLY AGREED &amp; SIGNED</span>
+              <span style="font-size:12px;color:#6c6c72;text-align:right;line-height:1.35">{{ signedCopy.at }}<br>{{ signedCopy.ref }}</span>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ canPrompt }}"><button onClick="{{ install }}" style="border:0;background:#c19a4b;color:#15233a;border-radius:16px;padding:17px;font-size:17px;font-weight:700;cursor:pointer">Install the app</button></sc-if>
+        <a href="index.html" style="display:block;background:#15233a;color:#fff;border-radius:16px;padding:17px;font-size:17px;font-weight:600">Open the app</a>
+        <a href="https://www.facebook.com/messages/t/2834933249900592" target="_blank" style="font-size:14px;color:#4c4c52;padding:6px">Back to the Housemates chat</a>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;420px&quot;,&quot;height&quot;:&quot;860px&quot;}}">
+const SB_URL='https://jnauayhzpheymsjdhjgg.supabase.co', SB_KEY='sb_publishable_Cx1Oov0Z6EYPhZLMsIn3Yw_ydVsAFLv';
+const DEMO=/[?&]demo/.test(location.search); // demo: sample names only, never signs up or sends details
+const LOCAL=[[1,"Dexter Bacani"],[2,"Romeo Fajardo"],[3,"Ramil Hermoso"],[4,"Alfredo Luis Inocencio"],[5,"Efren Kabigting"],[6,"Cesar Anton Lacsamana"],[7,"Danilo Joaquin Maglaya"],[8,"Rodel Natividad"],[9,"Marlon Oliveros"],[10,"Victor Emmanuel Pangilinan"],[11,"Nestor Quiambao"],[12,"Wilfredo Rosales"],[13,"Arnel Sarmiento"],[14,"Harold Gene Umali"],[15,"Oscar Valdez"],[16,"Benedict Yabut"],[17,"Teodoro Zamora"],[18,"Fernando Agbayani"],[19,"Leopoldo Joven Balagtas"],[20,"Renato Cabrera"],[21,"Lorenzo Paolo Dizon"],[22,"Gerald Vincent Umali"],[23,"Isidro Evangelista"],[24,"Cristobal Fabella"],[25,"Mario Gonzaga"],[26,"Jaypee Hilario"],[27,"Eusebio Ilagan"],[28,"Jomari Javier"],[29,"Erwin Dale Lumbera"],[30,"Anselmo Muñoz"],[31,"Ferdinand Gil Navarro"],[32,"Rolly Zamora"],[33,"Ruel Ocampo"],[34,"Dennis Karl Pascual"],[35,"Ernesto Del Rosario"],[36,"Faustino Jr. Ramos"],[37,"Marcelo Soriano"],[38,"Jericho Dane Tamayo"],[39,"Rufino Ubaldo"],[40,"Ponciano Villanueva"],[41,"Clifford Wenceslao"],[42,"Emil Maglaya"],[43,"Ceferino Andaya"],[44,"Rommel Bautista"],[45,"Jerome Catapang"],[46,"Marvin Dimaano"],[47,"Teofilo Agbayani"],[48,"Joemar Entrata"],[49,"Gregorio Peñaflor"]];
+const AVBG=['#2b4a6f','#3f5d4a','#6b4f3a','#4f4565','#15233a','#5b4a2f'];
+const ST=[['onhouse','At 953 C. Aragon'],['onvacation','Vacation'],['onboard','Onboard']];
+const DEPTS=[['Engine','⚙','Engineers, oilers, wipers'],['Deck','⚓','Officers, ABs, OS'],['Culinary','♨','Cooks, messmen, stewards']];
+const APP_INDEX=(()=>{ try{ return new URL('join.html?source=installed',location.href).href; }catch(e){ return 'join.html'; } })();
+const APP_URL=(()=>{ try{ return new URL('join.html',location.href).href; }catch(e){ return 'join.html'; } })();
+// Installed app (Home Screen): skip the install guide. Browser: install first, then onboarding.
+const STANDALONE=(()=>{ try{ return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true; }catch(e){ return false; } })();
+const STEPS=STANDALONE?['welcome','name','details','pin','open']:['welcome','poster','name','details','pin','open'];
+const FIELDS=[['fb','Facebook name','Exactly as shown on Facebook','text'],['phone','Mobile number *','0917 123 4567','tel'],['email','Email *','name@email.com','email'],['emName','Emergency contact name *','Full name (relationship)','text'],['emPhone','Emergency contact number(s) *','0917 … / 0918 …','tel']];
+const okPhone=v=>String(v||'').replace(/\D/g,'').length>=7, okEmail=v=>/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(v||'').trim());
+const ua=navigator.userAgent||'';
+// wrong-PIN backoff, kept on this phone: {n: misses, at: last miss}. 3 misses -> 30 s, then doubling, capped at 15 min.
+const pinFailGet=()=>{ try{ return JSON.parse(localStorage.getItem('953-pinfail')||'null')||{n:0,at:0}; }catch(e){ return {n:0,at:0}; } };
+const pinFailAdd=()=>{ const f=pinFailGet(); try{ localStorage.setItem('953-pinfail',JSON.stringify({n:f.n+1,at:Date.now()})); }catch(e){} };
+const pinFailClear=()=>{ try{ localStorage.removeItem('953-pinfail'); }catch(e){} };
+const pinWait=()=>{ const f=pinFailGet(); if(f.n<3) return 0; const ms=Math.min(15*60e3,30e3*Math.pow(2,f.n-3)); return Math.max(0,Math.ceil((f.at+ms-Date.now())/1000)); };
+const BIRTH_MAX=(()=>{ const t=new Date(Date.now()+8*3600e3).toISOString().slice(0,10); return (+t.slice(0,4)-16)+'-'+(t.slice(5)==='02-29'?'02-28':t.slice(5)); })(); // date of birth: 16 or older
+const okBirth=v=>/^\d{4}-\d{2}-\d{2}$/.test(v||'')&&v>='1940-01-01'&&v<=BIRTH_MAX;
+const IOS=/iPhone|iPad|iPod/.test(ua)||(/Mac/.test(ua)&&'ontouchend' in document);
+const INAPP=/FBAN|FBAV|FB_IAB|Messenger|Instagram/.test(ua);
+class Component extends DCLogic {
+  state={copied:false,step:(!STANDALONE&&/source=installed/.test(location.search))?'name':'welcome',names:LOCAL.map(([id,n])=>({id,name:n,fb:'',status:'',hasPin:false})),live:false,query:'',who:null,
+    f:{status:'',dept:'',vessel:'',back:'',fb:'',phone:'',email:'',emName:'',emPhone:'',birth:''},agree:false,returning:false,sess:null,signed:null,error:null,pin:'',pinFirst:null,pinErr:null,busy:false,os:IOS?'ios':'android',canPrompt:false,queued:false,inst:'idle'};
+  componentDidMount(){
+    // the Home Screen app opens here; members who already finished setup go straight to the app
+    if(STANDALONE&&!DEMO){ try{ if(localStorage.getItem('953-onboarded')||localStorage.getItem('953-trusted')) return location.replace('index.html'); }catch(e){} }
+    try{ if('serviceWorker' in navigator&&!DEMO) navigator.serviceWorker.register('sw.js'); }catch(e){}
+    if(!DEMO) fetch(SB_URL+'/rest/v1/signin_names?select=*',{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}}).then(r=>r.ok?r.json():Promise.reject()).then(rows=>{ if(rows.length) this.setState({live:true,names:rows.map(r=>({id:r.id,name:r.first_name+' '+r.last_name,fb:r.fb_name||'',status:r.status,hasPin:r.has_pin}))}); }).catch(()=>{});
+    this._bip=e=>{ e.preventDefault(); this._prompt=e; this.setState({canPrompt:true}); }; window.addEventListener('beforeinstallprompt',this._bip);
+    // install detection: Chrome fires appinstalled; getInstalledRelatedApps sees an app installed earlier
+    this._ai=()=>this.installDone(1200); window.addEventListener('appinstalled',this._ai);
+    try{ if(!STANDALONE&&navigator.getInstalledRelatedApps) navigator.getInstalledRelatedApps().then(a=>{ if(a&&a.length) this.setState({inst:'ready',already:true}); }).catch(()=>{}); }catch(e){}
+  }
+  componentWillUnmount(){ window.removeEventListener('beforeinstallprompt',this._bip); window.removeEventListener('appinstalled',this._ai); clearTimeout(this._instT); clearTimeout(this._openT); }
+  installDone(wait){ if(this.state.inst==='ready') return; clearTimeout(this._instT); this._instT=setTimeout(()=>{ this.setState({inst:'ready'}); this._openT=setTimeout(()=>this.openApp(),3500); },wait); }
+  openApp(){ if(this._opened) return; this._opened=true; clearTimeout(this._openT); try{ localStorage.setItem('953-installed','1'); }catch(e){} location.href=APP_INDEX; }
+  go(step){ this.setState({step,error:null}); try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){} }
+  async auth(path,body){ const r=await fetch(SB_URL+'/auth/v1/'+path,{method:'POST',headers:{apikey:SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(body)}); const j=await r.json().catch(()=>({})); if(r.status===429) throw new Error(/wrong PIN/i.test(j.msg||j.message||'')?(j.msg||j.message):'Too many attempts. Try again in 15 minutes.'); // 429: the PIN lockout (039) or the auth server's rate limit
+    if(!r.ok) throw new Error(j.msg||j.error_description||j.message||('HTTP '+r.status)); return j; }
+  async pinDone(v){
+    const s=this.state, w=s.who, email='m'+w.id+'@953aragon.app', pw='953-'+v;
+    if(w.hasPin){
+      // Returning member (the server already has a PIN for this name): sign in, then ask only for what the server is missing.
+      // Wrong-PIN backoff: 3 misses -> wait 30 s, doubling each further miss up to 15 min (kept on this phone; the auth server's own rate limit still applies).
+      const wait=pinWait(); if(wait>0) return this.setState({pin:'',pinErr:'Too many wrong PINs. Try again in '+(wait>60?Math.ceil(wait/60)+' min':wait+' s')+'.'});
+      this.setState({busy:true});
+      try{ const j=await this.auth('token?grant_type=password',{email,password:pw}); pinFailClear();
+        if(s.live&&!DEMO&&await this.needsAgreement(j,w.id)){ this.setState({busy:false,pin:'',sess:j,returning:true}); return this.go('details'); }
+        await this.finish(j); }
+      catch(e){ const bad=/invalid/i.test(e.message); if(bad) pinFailAdd(); const w2=pinWait(); this.setState({busy:false,pin:'',pinErr:bad?(w2>0?'Wrong PIN. Wait '+w2+' s before trying again, or ask an admin to reset it.':'Wrong PIN. Try again, or ask an admin to reset it.'):e.message}); } return; }
+    if(!s.pinFirst){ if(/^(\d)\1{5}$/.test(v)||v==='123456'||v==='654321') return this.setState({pin:'',pinErr:'Too easy to guess. Pick another PIN.'}); return this.setState({pinFirst:v,pin:''}); }
+    if(s.pinFirst!==v) return this.setState({pinFirst:null,pin:'',pinErr:'The PINs didn’t match. Start again.'});
+    this.setState({busy:true});
+    if(!s.live){ return this.finish(null,true); }
+    try{ let j=await this.auth('signup',{email,password:pw,data:{member_id:String(w.id)}}); if(!j.access_token) j=await this.auth('token?grant_type=password',{email,password:pw}); await this.finish(j); }
+    catch(e){ this.setState({busy:false,pin:'',pinFirst:null,pinErr:/registered/i.test(e.message)?'You already have a PIN. Enter it instead.':'Couldn’t save your PIN: '+e.message,who:/registered/i.test(e.message)?{...w,hasPin:true}:w}); }
+  }
+  async finish(sess,offline){
+    const s=this.state, f=s.f, w=s.who;
+    const row={member_name:w.name,member_id:s.live?w.id:null,status:f.status||null,vessel:f.vessel||null,back_on:f.back||null,phone:f.phone||null,email:(f.email||'').trim()||null,rank:f.dept||null,emergency_contact:[f.emName.trim(),f.emPhone.trim()].filter(Boolean).join(' · ')||null,fb_name:f.fb||null};
+    let queued=!!offline;
+    if(s.agree) queued=(await this.saveAgreement(sess))||queued;
+    // signed in: the member's own details go straight to their record (the database allows a member to edit their own row);
+    // the admin review queue (profile_updates) is only the fallback when that fails
+    let direct=false;
+    if(sess&&s.live&&!DEMO&&Object.keys(f).some(k=>f[k])){
+      const own={}; [['phone','phone'],['email','email'],['emergency_contact','emergency_contact'],['fb_name','fb_name'],['rank','rank'],['status','status'],['vessel','vessel'],['back_on','back_on']].forEach(([k,c])=>{ if(row[k]) own[c]=row[k]; });
+      try{ const r=await fetch(SB_URL+'/rest/v1/members?id=eq.'+w.id+'&select=id',{method:'PATCH',headers:{apikey:SB_KEY,Authorization:'Bearer '+sess.access_token,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify(own)}); direct=r.ok&&((await r.json().catch(()=>[]))||[]).length>0; }catch(e){ direct=false; }
+    }
+    if(sess&&s.live&&!DEMO&&okBirth(f.birth)){ try{ await fetch(SB_URL+'/rest/v1/rpc/set_my_birthdate',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+sess.access_token,'Content-Type':'application/json'},body:JSON.stringify({p_birthdate:f.birth})}); }catch(e){} }
+    if(!direct&&Object.keys(f).some(k=>f[k])){
+      try{ const r=await fetch(SB_URL+'/rest/v1/profile_updates',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+(sess?sess.access_token:SB_KEY),'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(row)}); if(!r.ok) throw 0; }
+      catch(e){ queued=true; try{ const q=JSON.parse(localStorage.getItem('953-pending-updates')||'[]'); q.push(row); localStorage.setItem('953-pending-updates',JSON.stringify(q)); }catch(_){} }
+    }
+    try{ if(sess&&sess.refresh_token){ localStorage.setItem('953-rt',sess.refresh_token); localStorage.setItem('953-trusted',JSON.stringify({id:w.id,at:Date.now()})); } }catch(e){}
+    try{ localStorage.setItem('953-onboarded','1'); }catch(e){}
+    this.setState({busy:false,pin:'',pinFirst:null,queued});
+    if(s.returning&&STANDALONE&&!DEMO) return location.replace('index.html'); // signed-in returning member on the installed app: straight into the house app
+    this.go('open');
+  }
+  // has this member already signed the House Agreement on the server? (members.agreed_at, else an agreements row). If we cannot tell, do not force the step.
+  async needsAgreement(sess,id){ const h={apikey:SB_KEY,Authorization:'Bearer '+sess.access_token};
+    try{ let r=await fetch(SB_URL+'/rest/v1/members?id=eq.'+id+'&select=agreed_at',{headers:h}); if(r.ok){ const a=await r.json(); if(a[0]&&a[0].agreed_at) return false; }
+      r=await fetch(SB_URL+'/rest/v1/agreements?member_id=eq.'+id+'&select=id&limit=1',{headers:h}); if(!r.ok) return false; return !(await r.json()).length; }catch(e){ return false; } }
+  async saveAgreement(sess){ const w=this.state.who, row={member_id:w.id,source:'onboarding',user_agent:ua.slice(0,250)};
+    let signed={at:new Date().toISOString(),id:null};
+    if(sess&&!DEMO){ try{ const r=await fetch(SB_URL+'/rest/v1/agreements',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+sess.access_token,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify(row)}); if(!r.ok) throw 0; const j=(await r.json())[0]; signed={at:j.agreed_at,id:j.id}; }
+      catch(e){ try{ localStorage.setItem('953-pending-agreement',JSON.stringify(row)); }catch(_){} this.setState({signed}); return true; } }
+    else if(!DEMO){ try{ localStorage.setItem('953-pending-agreement',JSON.stringify(row)); }catch(_){} this.setState({signed}); return true; }
+    this.setState({signed}); return false; }
+  key(k){ if(this.state.busy) return; const cur=this._pin!=null&&this._pinStep===this.state.pinFirst?this._pin:this.state.pin;
+    const v=k==='del'?cur.slice(0,-1):(cur.length>=6?cur:cur+k); this._pin=v; this._pinStep=this.state.pinFirst; this.setState({pin:v,pinErr:null});
+    if(k!=='del'&&v.length===6&&cur.length<6){ this._pin=''; setTimeout(()=>this.pinDone(v),150); } }
+  renderVals(){
+    const s=this.state, f=s.f, idx=STEPS.indexOf(s.step), w=s.who;
+    const st={}; STEPS.forEach(k=>st[k]=s.step===k);
+    const q=s.query.trim().toLowerCase();
+    const ini=n=>n.split(' ').filter(Boolean).map(x=>x[0]).join('').slice(0,2).toUpperCase();
+    const names=s.names.filter(n=>!q||(n.name+' '+n.fb).toLowerCase().includes(q)).sort((a,b)=>a.name.localeCompare(b.name)).slice(0,q?12:80)
+      .map(n=>({name:n.name,ini:ini(n.name),bg:AVBG[n.id%6],sub:n.hasPin?'PIN already set':(n.fb?'Facebook · '+n.fb:'Tap to continue'),onTap:()=>{ if(n.hasPin&&s.live&&!DEMO){ this.setState({who:n,query:'',returning:true,sess:null,f:{status:'',dept:'',vessel:'',back:'',fb:'',phone:'',email:'',emName:'',emPhone:'',birth:''},pin:'',pinFirst:null,pinErr:null,agree:false}); return this.go('pin'); } this.setState({who:n,query:'',returning:false,sess:null}); this.go('details'); }}));
+    const hasPin=!!(w&&w.hasPin);
+    const pin={title:hasPin?'Enter your PIN':s.pinFirst?'Confirm your PIN':'Create your PIN',
+      sub:hasPin?'Welcome back. Enter the PIN you already set to sign in on this phone.':s.pinFirst?'Enter the same 6 digits again.':'6 digits. You’ll use it once on each new phone.',
+      dots:[0,1,2,3,4,5].map(i=>({bg:i<s.pin.length?'#15233a':'transparent'})),err:s.busy?'Saving…':s.pinErr,shake:s.pinErr?'shake .4s':'none',
+      keys:['1','2','3','4','5','6','7','8','9','','0','del'].map(k=>({label:k==='del'?'⌫':k,vis:k===''?'hidden':'visible',bg:k==='del'?'transparent':'rgba(255,255,255,.75)',onTap:()=>k!==''&&this.key(k)})),
+      foot:'Avoid birthdays and repeated digits. Admins never see your PIN. Forgot it later? Ask an admin to reset it.'};
+    const isIos=s.os==='ios';
+    const B=(arr)=>arr.map(([t,hi,flex])=>({t,flex:flex||'none',fs:t.length>2?'12px':'17px',bg:hi?'#c19a4b':'transparent',anim:hi?'ring 1.4s infinite':'none'}));
+    const Lst=(arr)=>arr.map(([t,i,hi])=>({t,i,bg:hi?'#fff3d6':'#fff',w:hi?700:400,anim:hi?'ring 1.4s infinite':'none'}));
+    const guide2=isIos?[
+      {t:'Open in Safari',s:'In Messenger, tap ··· at the top right, then “Open in external browser”.',bar:B([['‹'],['953 C. Aragon',0,'1'],['···',1]]),align:'flex-start'},
+      {t:'Tap the Share button',s:'It’s the square with an arrow, in the bar at the bottom of Safari.',bar:B([['‹'],['›'],['⇪',1],['⧉'],['⋯']]),align:'flex-end'},
+      {t:'Tap “Add to Home Screen”',s:'Scroll down the list a little if you don’t see it.',list:Lst([['Copy','⧉'],['Add to Reading List','◎'],['Add to Home Screen','＋',1]])},
+      {t:'Tap “Add”',s:'Top right corner. Don’t change the name.',dialog:'Add'},
+      {t:'Open it from your Home Screen',s:'Look for the navy 953 C. Aragon icon. Sign in with your PIN, then tap “Trust this device”.',home:true}]
+     :[
+      {t:'Open in Chrome',s:'In Messenger, tap ⋮ at the top right, then “Open in Chrome”.',bar:B([['✕'],['953 C. Aragon',0,'1'],['⋮',1]]),align:'flex-start'},
+      {t:'Tap ⋮ in Chrome',s:'The three dots at the top right, next to the address.',bar:B([['⌂'],['github.io/953_Aragon',0,'1'],['⋮',1]]),align:'flex-start'},
+      {t:'Tap “Install app”',s:'Some phones say “Add to Home screen” instead.',list:Lst([['New tab','＋'],['Bookmarks','☆'],['Install app','⤓',1]])},
+      {t:'Tap “Install”',s:'A small box pops up. Tap Install.',dialog:'Install'},
+      {t:'Open it from your apps',s:'Look for the navy 953 C. Aragon icon. You’ll already be signed in.',home:true}];
+    const guide=isIos?[
+      {n:1,t:'Open in Safari',s:INAPP?'You’re in Messenger: tap ··· then Open in browser':'Use Safari, not the Messenger browser',v:'Safari',vs:'13px'},
+      {n:2,t:'Tap Share',s:'The square with an arrow, at the bottom',v:'⇪',vs:'22px'},
+      {n:3,t:'Add to Home Screen',s:'Scroll down the list, then tap Add',v:'＋',vs:'22px'}]
+     :[
+      {n:1,t:'Open in Chrome',s:INAPP?'You’re in Messenger: tap ⋮ then Open in Chrome':'Use Chrome, not the Messenger browser',v:'Chrome',vs:'13px'},
+      {n:2,t:'Tap the menu',s:'The three dots, top right',v:'⋮',vs:'22px'},
+      {n:3,t:'Install app',s:'Or “Add to Home screen”, then Install',v:'↓',vs:'22px'}];
+    return {
+      st, progress:STEPS.slice(1).map((k,i)=>({bg:i<idx?'#15233a':'rgba(21,35,58,.15)'})), stepLabel:s.returning&&idx>0&&idx<STEPS.length-1?'Sign in':idx===0?'3 min':idx<STEPS.length-1?'Step '+idx+' of '+(STEPS.length-2):'Done',
+      canBack:idx>0&&idx<STEPS.length-1&&!s.busy&&!(s.returning&&s.step==='details'), back:()=>this.go(s.returning&&s.step==='pin'?'name':STEPS[Math.max(0,idx-1)]),
+      overview:[{n:1,t:'Your details',s:'Status, Facebook name, contacts'},{n:2,t:'Your PIN',s:'Sign in once on each phone'},{n:3,t:'Install the app',s:'Add it to your Home Screen'}].map((o,i,a)=>({...o,bd:i<a.length-1?'.5px solid rgba(0,0,0,.08)':'0'})),
+      start:()=>this.go(STEPS[1]), query:s.query, onQuery:e=>this.setState({query:e.target.value}), names,
+      first:w?w.name.split(' ')[0]:'', f, isOnboard:f.status==='onboard', error:s.error,
+      on:{vessel:e=>this.setState({f:{...f,vessel:e.target.value}}),back:e=>this.setState({f:{...f,back:e.target.value}}),birth:e=>{ const v=e.target.value; this.setState(p=>({f:{...p.f,birth:v},error:null})); }}, birthMax:BIRTH_MAX,
+      statuses:ST.map(([k,l])=>({label:l,bg:f.status===k?'#fff':'transparent',sh:f.status===k?'0 1px 3px rgba(0,0,0,.14)':'none',onTap:()=>this.setState({f:{...f,status:f.status===k?'':k}})})),
+      fields:FIELDS.map(([k,l,ph,mode])=>({label:l,ph,mode,value:f[k],onChange:e=>{ const v=e.target.value; this.setState(p=>({f:{...p.f,[k]:v},error:null})); }})),
+      toPin:()=>{ if(s.returning){ if(!s.agree) return this.setState({error:'Tick the box to agree to the House Agreement and Rules.'}); this.setState({busy:true}); return this.finish(s.sess); } if(!okPhone(f.phone)) return this.setState({error:'Enter your mobile number.'}); if(!okEmail(f.email)) return this.setState({error:'Enter a valid email address.'}); if(!f.emName.trim()||!okPhone(f.emPhone)) return this.setState({error:'Add an emergency contact: their name and number.'}); if(!okBirth(f.birth)) return this.setState({error:'Add your date of birth (members are 16 or older).'}); if(!s.agree) return this.setState({error:'Tick the box to agree to the House Agreement and Rules.'}); this.setState({pin:'',pinFirst:null,pinErr:null}); this.go('pin'); },
+      pin, returning:!!s.returning, notReturning:!s.returning,
+      platforms:[['ios','iPhone'],['android','Android']].map(([k,l])=>({label:l,bg:s.os===k?'#fff':'transparent',fg:s.os===k?'#15233a':'#fff',onTap:()=>this.setState({os:k})})),
+      guide:guide2.map((g,i)=>({n:i+1,bar:null,list:null,dialog:null,home:false,align:'center',...g})), osName:isIos?'IPHONE':'ANDROID', inApp:INAPP, browser:isIos?'Safari':'Chrome',
+      homeIcons:['#7fb3e8','#f2b45a','#6cc59a','#e98b8b','#a59be0','#9ad0d8','#f0a3c4','#c7c7cc','#8fc1a9'],
+      canOpenBrowser:!isIos||IOS, openBrowserHref:isIos?APP_URL.replace(/^https:/,'x-safari-https:'):'intent://'+APP_URL.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url='+encodeURIComponent(APP_URL)+';end',
+      copySpan:(!isIos||IOS)?'auto':'1 / -1', copyLabelShort:s.copied?'Copied ✓':'Copy link',
+      copyLabel:s.copied?'Link copied. Now open '+(isIos?'Safari':'Chrome')+' and paste it':'Copy link', copyLink:()=>{ const done=()=>this.setState({copied:true}); try{ navigator.clipboard.writeText(APP_URL).then(done,()=>{ window.prompt('Copy this link:',APP_URL); done(); }); }catch(e){ window.prompt('Copy this link:',APP_URL); done(); } },
+      crowd:s.names.slice(0,8).map(n=>({ini:ini(n.name),bg:AVBG[n.id%6]})), crowdCount:s.names.length,
+      who:w?w.name:'', card:{dept:f.dept||'Department',status:(ST.find(x=>x[0]===f.status)||[0,'Where are you?'])[1],fb:f.fb},
+      depts:DEPTS.map(([k,g,sub])=>({label:k,g,sub,bg:f.dept===k?'#15233a':'rgba(255,255,255,.7)',fg:f.dept===k?'#fff':'#15233a',bd:f.dept===k?'#15233a':'transparent',onTap:()=>this.setState({f:{...f,dept:f.dept===k?'':k}})})),
+      guideNote:isIos?'Once it’s on your Home Screen, open it from the new 953 C. Aragon icon and sign in with your PIN one last time. Then tap Trust this device.':'After installing, open 953 C. Aragon from your apps. You’ll stay signed in.',
+      toName:()=>this.go('name'), installed:s.installed, markInstalled:()=>this.setState({installed:true}),
+      agreeBox:s.agree?'#15233a':'transparent', agreeTick:s.agree?'✓':'', agreeAria:s.agree?'true':'false', agreeBd:s.error&&!s.agree?'#d0342c':'rgba(193,154,75,.35)',
+      toggleAgree:()=>this.setState(p=>({agree:!p.agree,error:null})),
+      signedCopy:s.signed&&w?{name:w.name,at:'Signed '+new Date(s.signed.at).toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',timeZone:'Asia/Manila'})+' PHT',ref:s.signed.id?'Record no. '+s.signed.id:DEMO?'Demo copy · not sent':'Saved on this phone · sends when online',
+        rows:[['Name',w.name],['Where now',(ST.find(x=>x[0]===f.status)||[0,'Not given'])[1]+(f.vessel?' · '+f.vessel:'')],['Department',f.dept||'Not given'],['Facebook',f.fb||'Not given'],['Mobile',f.phone||'Not given'],['Email',f.email||'Not given'],['Emergency',[f.emName,f.emPhone].filter(Boolean).join(' · ')||'Not given'],['Date of birth',f.birth?new Date(f.birth+'T00:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}):'Not given']].map(([k,v])=>({k,v}))}:null,
+      doneText:s.returning?'You are signed in on this phone. '+(STANDALONE?'Tap below to open the house app.':'Open the app now, or from your Home Screen if you installed it.'):(s.queued?'Your details are saved on this phone and will be sent when you have signal. ':'Your details are saved to your member record and your PIN is set. ')+(STANDALONE?'Tap below to open the house app.':'Open the app now, or from your Home Screen if you installed it.'),
+      canPrompt:s.canPrompt, install:async()=>{ const p=this._prompt; if(!p) return; p.prompt(); let ok=false; try{ ok=(await p.userChoice).outcome==='accepted'; }catch(e){} this._prompt=null; this.setState({canPrompt:false}); if(ok){ this.setState({inst:'installing'}); this.installDone(5000); } },
+      instIdle:s.inst==='idle', instInstalling:s.inst==='installing', instReady:s.inst==='ready', appHref:APP_INDEX, openApp:e=>{ if(e&&e.preventDefault) e.preventDefault(); this.openApp(); },
+      readyTitle:s.already?'Already on your phone':'Installed!', readySub:s.already?'953 C. Aragon is already installed. Open it to finish setting up.':'953 C. Aragon is on your Home Screen. Opening it in a moment so you can finish setting up.',
+      confetti:s.inst==='ready'?Array.from({length:36},(_,i)=>({x:((i*37)%100)+'%',w:(6+i%4*2)+'px',h:(10+i%3*4)+'px',c:['#c19a4b','#e2c47e','#1f63b4','#1f8a3c','#f6e05e','#ffffff'][i%6],t:(2.2+(i%5)*.35)+'s',d:((i%9)*.12)+'s'})):[]
+    };
+  }
+}
+</script>
+</body>
+</html>

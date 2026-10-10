@@ -1,0 +1,44 @@
+{
+  "id": "./",
+  "name": "953 C. Aragon House",
+  "short_name": "953 C. Aragon",
+  "description": "Member app for 953 C. Aragon House, Malate",
+  "start_url": "./join.html?source=homescreen",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1828",
+  "theme_color": "#15233a",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://emsstromd12e10-stack.github.io/953_Aragon/manifest.webmanifest"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": [
+      "focus-existing",
+      "auto"
+    ]
+  }
+}
