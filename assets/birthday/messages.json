@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "headline": "HAPPY BIRTHDAY",
+  "message_pool": [
+    {
+      "id": "warm",
+      "text": "Wishing you good health, happiness, and many more successful voyages ahead."
+    },
+    {
+      "id": "nautical",
+      "text": "Fair winds, calm seas, good health, and another year of great adventures!"
+    },
+    {
+      "id": "house",
+      "text": "From everyone at 953 C. Aragon, wishing you a fantastic birthday!"
+    },
+    {
+      "id": "voyage",
+      "text": "Another year, another voyage around the sun. Happy birthday!"
+    },
+    {
+      "id": "crew",
+      "text": "Good health, good company, and many more successful voyages ahead."
+    },
+    {
+      "id": "simple",
+      "text": "Wishing you a wonderful birthday filled with happiness and great memories."
+    }
+  ],
+  "footer_pool": [
+    "FAIR WINDS • CALM SEAS • GOOD COMPANY",
+    "GOOD HEALTH • HAPPY DAYS • SAFE VOYAGES",
+    "CALM SEAS • BRIGHT HORIZONS • MANY MORE YEARS"
+  ]
+}
